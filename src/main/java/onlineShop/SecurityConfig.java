@@ -27,9 +27,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/get*/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                 .antMatchers("/admin*/**").hasAuthority("ROLE_ADMIN")
                 .anyRequest().permitAll();
-        http
-                .logout()
-                .logoutUrl("/logout");
 
     }
 
